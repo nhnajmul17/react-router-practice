@@ -6,9 +6,10 @@ import { useParams } from 'react-router';
 
 const Meal = () => {
     const { mealId } = useParams()
-    const [meal, setMeal] = useState([])
+
+    const [meal, setMeal] = useState({})
     useEffect(() => {
-        fetch(`www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
             .then(res => res.json())
             .then(data => setMeal(data.meals[0]))
     }, [])

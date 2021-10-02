@@ -2,12 +2,13 @@ import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/mate
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
 import { useHistory } from 'react-router';
+// import { Link } from 'react-router-dom';
 
 const Meals = (props) => {
     const history = useHistory();
     // const { title, description, urlToImage } = props.meal
     const { idMeal, strMeal, strInstructions, strMealThumb } = props.meal
-    console.log(props.meal)
+    // console.log(props.meal)
 
     const handleLearnMore = () => {
         history.push(`/meal/${idMeal}`)
@@ -31,9 +32,10 @@ const Meals = (props) => {
             </CardContent>
             <CardActions>
                 <Button size="small">Share</Button>
+
                 <Button onClick={handleLearnMore} size="small">Learn More</Button>
             </CardActions>
-        </Card>
+        </Card >
     );
 };
 
